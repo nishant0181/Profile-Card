@@ -12,9 +12,11 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f4f4f4;
+    background-color: #e6fbfe;
     
 }
+
+
 
 
 .Profile-card{
@@ -22,12 +24,12 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     border-radius: 24px;
     height: 80vh;
     width: 25vw;
     background-color: rgb(244, 251, 255);
-    box-shadow: 3px 6px 8px 3px #7B7B7B;
+    /* box-shadow: 3px 6px 8px 3px #7B7B7B; */
     position: relative;
 }
 
@@ -40,6 +42,44 @@ body{
     height: 150px;
     border-radius: 24px 24px 0 0;
     width: 100%;
+}
+
+@property --deg{
+    syntax: '<angle>';
+    inherits: true;
+    initial-value: 0deg;
+}
+
+
+.Profile-card::after{
+    content: "";
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(
+    from var(--deg) at center,
+    #fff700,
+    #ff0101,
+    #00fbff,
+    #04ff3b
+    );
+
+
+    border-radius: inherit;
+    z-index: -2;
+    padding: 10px;
+
+    animation: autoRotate 6s linear infinite ;
+
+    filter: blur(10px);
+}
+
+@keyframes autoRotate{
+    to{
+        --deg:360deg;
+    }
 }
 
 
